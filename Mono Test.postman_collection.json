@@ -1,0 +1,999 @@
+{
+	"info": {
+		"_postman_id": "df2aff4f-3609-4755-9559-7f090e6464ca",
+		"name": "Mono Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9642296"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "deleted",
+									"value": "yes",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success default page not deleted data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "deleted",
+											"value": "yes",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "445"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bd-MDbMtOBXgg8NkhM0Ihn0IKU8wfc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Aug 2022 05:08:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"list product\",\n    \"data\": [\n        {\n            \"_id\": \"62f28534f51b6fd4e78439e2\",\n            \"name\": \"test update\",\n            \"category\": \"shoes\",\n            \"image_url\": [\n                \"dasdasf\"\n            ],\n            \"color\": \"red\",\n            \"price\": 40000\n        },\n        {\n            \"_id\": \"62f2af31757ca5e2134a4423\",\n            \"name\": \"test\",\n            \"category\": \"shoes\",\n            \"image_url\": [\n                \"dasdasf\"\n            ],\n            \"color\": \"red\",\n            \"price\": 40000\n        },\n        {\n            \"_id\": \"62f33d56a5bb92e82fa95cec\",\n            \"name\": \"test arr\",\n            \"category\": \"shoes\",\n            \"image_url\": [\n                \"dasdasf\",\n                \"dasdasfdsd\",\n                \"test\"\n            ],\n            \"color\": \"red\",\n            \"price\": 40000\n        }\n    ]\n}"
+						},
+						{
+							"name": "success default page deleted data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/?deleted=yes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "deleted",
+											"value": "yes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ae-iy0dhpmFk+raPu2H+gCb3vlBgcE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Aug 2022 05:09:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"list product\",\n    \"data\": [\n        {\n            \"_id\": \"62f2a8b362ba5d316f43c134\",\n            \"name\": \"test\",\n            \"category\": \"shoes\",\n            \"image_url\": [\n                \"dasdasf\"\n            ],\n            \"color\": \"red\",\n            \"price\": 40000\n        }\n    ]\n}"
+						},
+						{
+							"name": "error page invalid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/?page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-4wyIm7qoVGmaDabFI/N+fITjWqI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 17:11:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"page invalid\"\n}"
+						},
+						{
+							"name": "error page empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/?page=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-XjnLFO3U3VYgLbUMyf41J8YCTes\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 17:13:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"this page don't have data\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/62f28534f51b6fd4e78439e2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"62f28534f51b6fd4e78439e2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/62f28534f51b6fd4e78439e2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"62f28534f51b6fd4e78439e2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "309"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"135-nKWWZAEIJm/0ws/i3ziyNmoCvjA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 17:48:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"detail product\",\n    \"data\": {\n        \"_id\": \"62f28534f51b6fd4e78439e2\",\n        \"name\": \"test\",\n        \"category\": \"shoes\",\n        \"image_url\": \"dasdasf\",\n        \"color\": \"red\",\n        \"size\": \"40\",\n        \"price\": 40000,\n        \"stock\": 100,\n        \"weight\": 1,\n        \"deleted\": false,\n        \"createdAt\": \"2022-08-09T16:03:00.282Z\",\n        \"updatedAt\": \"2022-08-09T16:03:00.282Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test arr\",\r\n    \"description\": \"shoes made from akak\",\r\n    \"category\": \"shoes\",\r\n    \"image_url\": [\r\n        \"dasdasf\",\r\n        \"dasdasfdsd\",\r\n        \"test\"\r\n    ],\r\n    \"color\": \"red\",\r\n    \"size\": \"40\",\r\n    \"price\": 40000,\r\n    \"stock\": 100,\r\n    \"weight\": 1.2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success add",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\",\r\n    \"description\": \"shoes made from akak\",\r\n    \"category\": \"shoes\",\r\n    \"image_url\": \"dasdasf\",\r\n    \"color\": \"red\",\r\n    \"size\": \"40\",\r\n    \"price\": 40000,\r\n    \"stock\": 100,\r\n    \"weight\": 1.2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"159-6reu7f5/IGuiY+/LiFx29dj7R6o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 18:34:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"add product\",\n    \"data\": {\n        \"name\": \"test\",\n        \"description\": \"shoes made from akak\",\n        \"category\": \"shoes\",\n        \"image_url\": \"dasdasf\",\n        \"color\": \"red\",\n        \"size\": \"40\",\n        \"price\": 40000,\n        \"stock\": 100,\n        \"weight\": 1.2,\n        \"_id\": \"62f2a8b362ba5d316f43c134\",\n        \"deleted\": false,\n        \"createdAt\": \"2022-08-09T18:34:27.720Z\",\n        \"updatedAt\": \"2022-08-09T18:34:27.720Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "Error already exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\",\r\n    \"category\": \"shoes\",\r\n    \"image_url\": \"dasdasf\",\r\n    \"color\": \"red\",\r\n    \"size\": \"40\",\r\n    \"price\": 40000,\r\n    \"stock\": 100,\r\n    \"weight\": 1.2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-Zn/9fKxYBcCmHAILCJl1Dj+/sk0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 16:42:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Product already exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test update\",\r\n    \"weight\": 1.1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product/62f28534f51b6fd4e78439e2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"62f28534f51b6fd4e78439e2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test update\",\r\n    \"weight\": 1.1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product/62f28534f51b6fd4e78439e2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"62f28534f51b6fd4e78439e2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13e-EbErMflsHF+3iXF5z7SDrKeYyT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 18:33:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"update product\",\n    \"data\": {\n        \"_id\": \"62f28534f51b6fd4e78439e2\",\n        \"name\": \"test update\",\n        \"category\": \"shoes\",\n        \"image_url\": \"dasdasf\",\n        \"color\": \"red\",\n        \"size\": \"40\",\n        \"price\": 40000,\n        \"stock\": 100,\n        \"weight\": 1.1,\n        \"deleted\": false,\n        \"createdAt\": \"2022-08-09T16:03:00.282Z\",\n        \"updatedAt\": \"2022-08-09T18:33:15.451Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test update\",\r\n    \"weight\": 1.1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product/62f2af31757ca5e2134a4423",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"62f2af31757ca5e2134a4423"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test update\",\r\n    \"weight\": 1.1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product/62f2af31757ca5e2134a4423",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"62f2af31757ca5e2134a4423"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-F6WozEkdugOg8MiALN1+dLpS/sY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 19:34:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"deleteted product\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Restore Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test update\",\r\n    \"weight\": 1.1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product/restore/62f2af31757ca5e2134a4423",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"restore",
+								"62f2af31757ca5e2134a4423"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get All Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/order/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"order",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/order/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "382"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17e-Jpxk3EyEcI5xzEvfJI0oFl6ay2g\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Aug 2022 23:34:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"list product\",\n    \"data\": [\n        {\n            \"_id\": \"62f3aa9fdeb7619ae0348a67\",\n            \"items\": [\n                {\n                    \"product_id\": \"62f28534f51b6fd4e78439e2\",\n                    \"unit\": 1,\n                    \"order_price\": 40000,\n                    \"weight\": 1.1,\n                    \"_id\": \"62f3aa9fdeb7619ae0348a68\"\n                },\n                {\n                    \"product_id\": \"62f2af31757ca5e2134a4423\",\n                    \"unit\": 10,\n                    \"order_price\": 400000,\n                    \"weight\": 12,\n                    \"_id\": \"62f3aa9fdeb7619ae0348a69\"\n                }\n            ],\n            \"total_price\": 470000,\n            \"status\": \"PAYMENT PENDING\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/order/62f3aa9fdeb7619ae0348a67",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"62f3aa9fdeb7619ae0348a67"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/order/62f3aa9fdeb7619ae0348a67",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order",
+										"62f3aa9fdeb7619ae0348a67"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "642"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"282-kiVoG2VanAavovAxjmLd7hemK0M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Aug 2022 23:35:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"detail product\",\n    \"data\": {\n        \"_id\": \"62f3aa9fdeb7619ae0348a67\",\n        \"items\": [\n            {\n                \"product_id\": \"62f28534f51b6fd4e78439e2\",\n                \"unit\": 1,\n                \"order_price\": 40000,\n                \"weight\": 1.1,\n                \"_id\": \"62f3aa9fdeb7619ae0348a68\"\n            },\n            {\n                \"product_id\": \"62f2af31757ca5e2134a4423\",\n                \"unit\": 10,\n                \"order_price\": 400000,\n                \"weight\": 12,\n                \"_id\": \"62f3aa9fdeb7619ae0348a69\"\n            }\n        ],\n        \"name\": \"Sultan\",\n        \"address\": \"rumahku\",\n        \"city\": \"malang\",\n        \"province\": \"jawa timur\",\n        \"postal_code\": 65153,\n        \"courier\": \"JNE\",\n        \"courier_price\": 30000,\n        \"total_price\": 470000,\n        \"payment_method\": \"bank\",\n        \"status\": \"PAYMENT PENDING\",\n        \"deleted\": false,\n        \"createdAt\": \"2022-08-10T12:54:55.315Z\",\n        \"updatedAt\": \"2022-08-10T12:54:55.315Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product_id\": \"62f28534f51b6fd4e78439e2\",\r\n            \"unit\": 2\r\n        },\r\n        {\r\n            \"product_id\": \"62f2af31757ca5e2134a4423\",\r\n            \"unit\": 5\r\n        }\r\n    ],\r\n    \"name\": \"Sultan\",\r\n    \"address\": \"rumahku\",\r\n    \"city\": \"malang\",\r\n    \"province\": \"jawa timur\",\r\n    \"postal_code\": 65153,\r\n    \"courier\": \"JNE\",\r\n    \"courier_price\": 30000,\r\n    \"payment_method\": \"bank\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/order/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"order",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product_id\": \"62f28534f51b6fd4e78439e2\",\r\n            \"unit\": 2\r\n        },\r\n        {\r\n            \"product_id\": \"62f2af31757ca5e2134a4423\",\r\n            \"unit\": 5\r\n        }\r\n    ],\r\n    \"name\": \"Sultan\",\r\n    \"address\": \"rumahku\",\r\n    \"city\": \"malang\",\r\n    \"province\": \"jawa timur\",\r\n    \"postal_code\": 65153,\r\n    \"courier\": \"JNE\",\r\n    \"courier_price\": 30000,\r\n    \"payment_method\": \"bank\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/order/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "637"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27d-TC0L887+zwm3ojpuhr8VZJVnso8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Aug 2022 23:35:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"add product\",\n    \"data\": {\n        \"items\": [\n            {\n                \"product_id\": \"62f28534f51b6fd4e78439e2\",\n                \"unit\": 2,\n                \"order_price\": 80000,\n                \"weight\": 2.2,\n                \"_id\": \"62f440d3e2a41fed2277694c\"\n            },\n            {\n                \"product_id\": \"62f2af31757ca5e2134a4423\",\n                \"unit\": 5,\n                \"order_price\": 200000,\n                \"weight\": 6,\n                \"_id\": \"62f440d3e2a41fed2277694d\"\n            }\n        ],\n        \"name\": \"Sultan\",\n        \"address\": \"rumahku\",\n        \"city\": \"malang\",\n        \"province\": \"jawa timur\",\n        \"postal_code\": 65153,\n        \"courier\": \"JNE\",\n        \"courier_price\": 30000,\n        \"total_price\": 310000,\n        \"payment_method\": \"bank\",\n        \"status\": \"PAYMENT PENDING\",\n        \"_id\": \"62f440d3e2a41fed2277694b\",\n        \"deleted\": false,\n        \"createdAt\": \"2022-08-10T23:35:47.942Z\",\n        \"updatedAt\": \"2022-08-10T23:35:47.942Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
