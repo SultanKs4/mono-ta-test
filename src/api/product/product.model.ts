@@ -18,5 +18,5 @@ const productSchema = new Schema<IProduct>(
 )
 
 productSchema.plugin(MongooseDelete, { deletedAt: true, overrideMethods: true })
-export default model<IProduct>("Project", productSchema) as SoftDeleteModel<IProduct>
-// export default model<IProduct>("Project", productSchema)
+export default model<IProduct>("Product", productSchema) as SoftDeleteModel<IProduct>
+// export default model<IProduct>("Product", productSchema)
